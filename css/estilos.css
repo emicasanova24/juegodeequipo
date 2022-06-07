@@ -1,10 +1,16 @@
 body {
-    background: rgb(121,9,118);
-    background: linear-gradient(31deg, rgba(121,9,118,1) 45%, rgba(0,212,255,1) 100%);
+    background: rgb(110,9,121);
+    background: -moz-radial-gradient(circle, rgba(110,9,121,1) 38%, rgba(0,212,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(110,9,121,1) 38%, rgba(0,212,255,1) 100%);
+    background: radial-gradient(circle, rgba(110,9,121,1) 38%, rgba(0,212,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6e0979",endColorstr="#00d4ff",GradientType=1);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    margin: 0px;
 }
 
+
+/*
 .header {
     background-color: #ffa6f2;
     display: flex;
@@ -14,6 +20,7 @@ body {
     padding: 1rem 1.2rem;
     margin: 0px;
 }
+*/
 
 .header img {
     width: 200px;
@@ -74,24 +81,27 @@ body {
 
 /*grid layout*/
 .grid-layout {
+    width: 50%;
+    margin: auto;
+    padding: 20px 0px;
     display: grid;
-    padding: 100px;
     gap: 10px;
-    width: 80%;
-    grid-template-areas: 'noticia1 noticia2'
-                         'noticia1 noticia3';
+    grid-template-areas: 'noticia1 noticia1'
+                        'noticia1 noticia1'
+                        'noticia2 noticia3'
+                        ' noticia4 noticia5';
 }
 .caja {
     border: 4px solid black;
     background-color: lightblue;
     text-align: center;
     line-height: 200px;
-    padding 20px;
 }
 
 .c1 {
     grid-area: noticia1;
     display: flex;
+    justify-content: center;
 }
 
 .c2 {
@@ -105,6 +115,13 @@ body {
 
 /*fin grid layout*/
 
+/*qs*/
+.fondo {
+    background-color: #32063a;
+    width: 100%;
+    display: flex;
+    gap: 20px 
+}
 
 
 .textoind p {
@@ -114,24 +131,6 @@ body {
 }
 
 
-.footer div {
-    font-style: italic;
-    display: flex;
-    justify-content: center;
-}
-
-.footer-contacto li {
-    background-color: #fafafa;
-    margin: 1rem;
-    padding: 1rem;
-    border: 2px solid #ccc;
-    list-style: none; 
-}
-.footer-contacto ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
 
 .formreg {
     background-color: #ffa6f2;
@@ -144,7 +143,7 @@ body {
     width: 1000px;
     height: 1300px;
     display: block;
-    margin: 0px auto;   
+    margin: 20px auto;   
 }
 
 .video {
@@ -175,54 +174,84 @@ body {
 
 }
 
-/*desde acá*/
+  /*Posiciones*/
 
-.container {
-    display: grid; 
-    margin: 0px 220px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    grid-template-rows: 75px; 
-    gap: 10px; 
-    padding: 2rem; 
-    border-radius: 30px;
-    grid-auto-flow: dense; 
-  }
-  
-  .img-container img{
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-  }
-  
-  .vertical {
-    grid-row: span 3; 
-  }
-  
-  
-  .horizontal {
-    grid-column: span 2; 
-  }
-  
-  .grande{
-    grid-column: span 3; 
-    grid-row: span 3; 
-    position: relative; 
-    overflow: hiiden; 
-  }
-  
-  .grande > h3 {
-    position: absolute; 
-    color: white; 
-    padding: 10px 20px; 
-    background-color: tomato; 
-    left: 10px; 
-    bottom: 10px; 
-    max-width: 100%; 
-  }
+
+.posiciones-apertura h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 5vh;
+}
+
+.imgposiciones {
+    width: 50%;
+    height: auto;
+}
   
 
-  @media (max-width: 600px) {
-    .logos {
-      display: none;
+  @media only screen and (max-width: 1000px) {
+
+    body {
+        margin: 0px;
+        width: auto;
     }
-  }
+    .header {
+        background-color: transparent;
+        height: auto;
+        margin: 0px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .header img {
+        width: 300px;
+        height: auto;
+        padding: 0px 10px 20px 20px;
+    }
+    .btn {
+        padding: 10px;
+      height: 20px auto;
+    }
+    .escudos {
+        display: none;
+    }
+    .grid-layout {
+        width: 80%;
+        padding: 20px 0px;
+        display: grid;
+        gap: 10px;
+        grid-template-areas: 'noticia1 noticia1 '
+                             'noticia1 noticia1'
+                             'noticia1 noticia1'
+                              'noticia2 noticia3'
+                              'noticia2 noticia3'
+                             'noticia4 noticia5';
+    }
+    
+    /*Fixture*/
+
+    .imgfixture {
+        width: 100%;
+        height: auto;
+    }
+
+    /*Posiciones*/
+
+    .imgposiciones {
+        width: 80%;
+        height: auto;
+    }
+    .posiciones-apertura h2 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 5vh;
+    }
+    
+    /*Partidos*/
+
+    .video {
+        width: auto;
+    }
+    .imgfixture {
+        width: 70%;
+        height: auto;
+    }
+    } 
